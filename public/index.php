@@ -38,14 +38,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $statement->bindValue(':lastname', $personn['lastname'], \PDO::PARAM_STR);
 
         $statement->execute();
-
-        $query = "SELECT * FROM friends";
-        $statement = $pdo->query($query);
-
-        $friendsArray = $statement->fetchAll(PDO::FETCH_ASSOC);
-        /* header('Location:index.php'); */
+        
+        header('Location:index.php'); 
     }
 }
+
+ $query = "SELECT * FROM friends";
+ $statement = $pdo->query($query);
+
+ $friendsArray = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
